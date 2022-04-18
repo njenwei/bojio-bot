@@ -28,7 +28,7 @@ export class Location {
 }
 
 export enum PlanStatus {
-	'confirm' = 'confirm',
+	'ok' = 'ok',
 	'maybe' = 'maybe',
 }
 

@@ -45,7 +45,7 @@ const datePickerMenu = new Menu('date-picker-menu')
         .row()
     })
     range.back({ text: 'back', payload }, async (ctx) =>
-			ctx.editMessageText(await formatStart(ctx.from.id), { parse_mode: 'MarkdownV2' }),
+			ctx.editMessageText(await formatStart(ctx.from.id)),
     )
     return range
   })
@@ -137,7 +137,7 @@ export const manageMenu = new Menu('manage-menu')
         .row()
     })
     range.back({ text: 'back', payload }, async (ctx) =>
-			ctx.editMessageText(await formatStart(ctx.from.id), { parse_mode: 'MarkdownV2' }),
+			ctx.editMessageText(await formatStart(ctx.from.id)),
     )
     return range
   })
@@ -151,7 +151,7 @@ const manageCancelMenu = new Menu('cancel-manage-menu')
     const params = payload.split(':')
     const plan = await getPlan(_.toInteger(params[0]))
     // Create options
-    const opts = ['confirm', 'maybe', 'cancel']
+    const opts = ['ok', 'maybe', 'cancel']
     opts
       .filter((e) => plan?.status !== e)
       .forEach((opt) => {

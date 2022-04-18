@@ -55,7 +55,7 @@ async function addTestFixtures() {
   plan.user.id = 101
   plan.location.name = 'fitbloc og'
   plan.date = dayjs().startOf('day').toDate()
-  plan.status = PlanStatus.confirm
+  plan.status = PlanStatus.ok
   await database.manager.save(plan)
 
   plan.id = 2

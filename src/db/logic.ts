@@ -9,14 +9,14 @@ export function formatDate(d: Dayjs | Date): string {
 	d = d.local()
 
 	if (d.isSame(dayjs(), 'day')) {
-		return d.format('[Today] [-] DD/MM')
+		return d.format('[today] [-] DD/MM')
 	}
 
 	if (d.isSame(dayjs().add(1, 'day'), 'day')) {
-		return d.format('[Tmr] [-] DD/MM')
+		return d.format('[tmr] [-] DD/MM')
 	}
 
-	return d.format('ddd [-] DD/MM')
+	return d.format('ddd [-] DD/MM').toLowerCase()
 }
 
 export function formatPlan(plan: Plan): string {
@@ -100,5 +100,5 @@ export async function getPlanByUsers(id: number) {
 }
 
 export function getStatus(): string[] {
-	return ['confirm', 'maybe']
+	return ['ok', 'maybe']
 }

@@ -46,7 +46,7 @@ mainMenu.register(manageMenu)
 bot.use(mainMenu)
 
 bot.command('start', async (ctx) => {
-  await ctx.reply(await formatStart(ctx.from?.id), { parse_mode: 'MarkdownV2', reply_markup: mainMenu })
+  await ctx.reply(await formatStart(ctx.from?.id), { reply_markup: mainMenu })
 })
 
 bot.api.setMyCommands([
